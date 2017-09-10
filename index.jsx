@@ -21,7 +21,8 @@ export default class InlineEdit extends React.Component {
         staticElement: React.PropTypes.string,
         tabIndex: React.PropTypes.number,
         isDisabled: React.PropTypes.bool,
-        editing: React.PropTypes.bool
+        editing: React.PropTypes.bool,
+        type: React.PropTypes.string
     };
 
     static defaultProps = {
@@ -152,7 +153,9 @@ export default class InlineEdit extends React.Component {
                 defaultValue={this.state.text}
                 onChange={this.textChanged}
                 style={this.props.style}
-                ref="input" />;
+                ref="input" 
+                type={this.props.type || 'text'}
+               />;
         }
     }
 }
